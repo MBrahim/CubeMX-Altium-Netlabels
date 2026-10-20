@@ -1,0 +1,2 @@
+altium-monkey>=2026.9.12
+olefile>=0.46

@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cubemx-altium-netlabels"
+version = "0.1.0"
+description = "Place net labels from an STM32CubeMX pinout CSV onto an MCU symbol in an Altium .SchDoc"
+readme = "README.md"
+requires-python = ">=3.12"          # limit set by altium-monkey (3.12 - 3.14)
+license = "AGPL-3.0-only"           # see README "License"
+keywords = ["altium", "stm32", "stm32cubemx", "schematic", "net-label", "eda"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Electronic Design Automation (EDA)",
+]
+dependencies = [
+    "altium-monkey>=2026.9.12",     # 2026.9.11 was yanked (broken on Python 3.12)
+    "olefile>=0.46",
+]
+
+[project.optional-dependencies]
+gui = ["PySide6>=6.5"]
+test = ["pytest>=7"]
+
+[project.scripts]
+cube-netlabels = "cube_netlabels.cli:main"
+cube-netlabels-gui = "cube_netlabels.gui:launch"
+
+[project.urls]
+Homepage = "https://github.com/MBrahim/cubemx-altium-netlabels"
+Issues = "https://github.com/MBrahim/cubemx-altium-netlabels/issues"
+
+[tool.setuptools]
+packages = ["cube_netlabels"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
