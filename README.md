@@ -7,13 +7,27 @@ I recommend insepcting the generated file first then you can overwrite on the or
 
 ## Run the GUI
 
-Install Python 3.12-3.14, then install the GUI dependencies from the project folder:
+Install Python 3.12-3.14, then clone the repository and install its GUI dependencies:
 
 ```bash
+git clone https://github.com/MBrahim/CubeMX-Altium-Netlabels.git
+cd Cubemx-Altium-Netlabels
 python -m pip install -e ".[gui]"
 ```
 
-Start the app with `python -m cube_netlabels --gui` or run `run_gui.bat` on Windows. Select the CubeMX CSV and input `.SchDoc`, choose the component designator and options, then generate the output.
+On Windows, start the GUI with `run_gui.bat`; or from the project folder run:
+
+```bash
+python -m cube_netlabels --gui
+```
+
+To run the CLI, use a command like this from the project folder, replacing the example paths and designator with your own:
+
+```bash
+python -m cube_netlabels pinout.csv board.SchDoc output.SchDoc --designator U1
+```
+
+Add `--dry-run` to preview the mapping without writing an output schematic. Select the CubeMX CSV and input `.SchDoc` in the GUI, choose the component designator and options, then generate the output.
 
 ![CubeMX Net Labels GUI](docs/images/Testing.gif)
 
