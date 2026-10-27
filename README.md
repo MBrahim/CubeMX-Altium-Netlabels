@@ -1,5 +1,8 @@
 # CubeMX to Altium Net Labels
 
+> [!WARNING]
+> **AI-written code.** This tool was written almost entirely by Claude | Co-Pilot, working from my design direction, feedback and bug reports. I've used and tested it on Windows with Altium 26.9.1, but other setups are less tested, so expect rough edges. Treat it like any third-party code: keep backups of your projects and report problems in Issues.
+
 Create Altium schematic net labels from an STM32CubeMX pinout CSV. The app matches package pin numbers to pins on your Altium symbol, then adds wire stubs and labels. Multi-part symbols are supported.
 
 The original schematic can be not overwritten. The generated schematic is saved as a new file.
